@@ -1,3 +1,3 @@
-from predict.py import main
+from predict import main
 
 main()
