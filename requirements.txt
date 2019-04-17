@@ -1,3 +1,4 @@
 keras
 sklearn
 numpy
+ai_integration==1.0.6
