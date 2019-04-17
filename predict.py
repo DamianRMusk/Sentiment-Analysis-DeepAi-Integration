@@ -35,7 +35,3 @@ def tokenize_data(X_raw):
     word_index = tokenizer.word_index
     X_processed = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
     return X_processed, word_index
-
-
-if __name__ == "__main__":
-    main()

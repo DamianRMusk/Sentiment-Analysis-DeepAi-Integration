@@ -1,7 +1,10 @@
-FROM python:2.7-slim
+FROM tensorflow/tensorflow:1.12.0-gpu
+
 WORKDIR /model
 COPY . /model
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
-EXPOSE 80
-ENV NAME TextAnalyzer
-CMD ["python", "main.py"]
+
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+ENTRYPOINT ["python", "entrypoint.py"]
+
