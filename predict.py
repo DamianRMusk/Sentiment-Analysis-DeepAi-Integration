@@ -28,7 +28,7 @@ def main():
             # What is being done to X, and why?
             result_data = {
                 "content-type": 'text/plain',
-                "data": "Fake output",
+                "data": status_txt,
                 "success": True
             }
             ai_integration.send_result(result_data)
