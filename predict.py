@@ -20,11 +20,12 @@ def main():
 
             X, word_index = tokenize_data(X_raw)
 
-            predictions = model.predict(x=X, batch_size=128)
+            predictions = model.predict(x=X, batch_size=1)
 
-            is_positive = predictions[X][1] >= 0.5
+            is_positive = predictions[0][1] >= 0.5
             status_txt = "Positive" if is_positive else "Negative"
-            
+            # This model was initially handling a set of inputs, yet now it only receives one: what implications could this have?
+            # What is being done to X, and why?
             result_data = {
                 "content-type": 'text/plain',
                 "data": "Fake output",
@@ -39,3 +40,11 @@ def tokenize_data(X_raw):
     word_index = tokenizer.word_index
     X_processed = pad_sequences(sequences, maxlen=MAX_SEQUENCE_LENGTH)
     return X_processed, word_index
+
+"""
+cd ~/.ssh/interns
+cd ~/.ssh
+ls
+chmod 700 ~/.ssh/interns
+ssh -i ~/.ssh/interns ubuntu@intern1.deepai.org
+"""
