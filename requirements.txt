@@ -1,4 +1,4 @@
-keras
+keras==1.2.2
 sklearn
 numpy
 ai_integration==1.0.6
